@@ -1,15 +1,19 @@
 $primary-color: #286090;
 $secondary-color: #F3F3F4;
 $primary-colorVariant: #2F4050;
-$primary-btnColor: #1AB394;
+$primary-btnColor: #00AFEF;
+$next-btnColor: #1AB394;
 $background-color: #00487A;
 $background-colorWhite: #ffffff;
+$white-color: #ffffff;
 
 :export {
   primaryColor: $primary-color;
   secondaryColor: $secondary-color;
   primaryColorVariant: $primary-colorVariant;
+  whiteColor: $white-color;
   primaryBtnColor: $primary-btnColor;
+  nextBtnColor: $next-btnColor;
   backgroundColor: $background-color;
   backgroundColorWhite: $background-colorWhite;
 }
