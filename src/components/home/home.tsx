@@ -2,7 +2,7 @@
 import variables from "@/app/variables.module.scss";
 import Image from "next/image";
 import "./home.scss";
-import loginRoute from "@/app/routes/post";
+import loginRoute from "@/routes/post";
 import { SetStateAction, useState } from "react";
 
 export default function Home() {
@@ -63,7 +63,7 @@ export default function Home() {
           >
             Entrar
           </button>
-          <button>Conecte-se</button>
+          <button disabled>Conecte-se</button>
         </div>
       </div>
     </div>
