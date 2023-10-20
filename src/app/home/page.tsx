@@ -4,10 +4,12 @@ import Image from "next/image";
 import "./home.scss";
 import loginRoute from "@/routes/post";
 import { SetStateAction, useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
   const [mailValue, setMailValue] = useState("");
   const [passwordValue, setPasswordValue] = useState("");
+  const router = useRouter()
 
   const handleUserChange = (e: {
     target: { value: SetStateAction<string> };
@@ -57,8 +59,8 @@ export default function Home() {
           ></input>
           <button
             style={{ backgroundColor: variables.primaryBtnColor }}
-            onClick={() => {
-              loginRoute(mailValue, passwordValue);
+            onClick={async () => {
+              await loginRoute(mailValue, passwordValue) && router.push("/dashboard")
             }}
           >
             Entrar
