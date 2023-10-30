@@ -5,11 +5,24 @@ import "./home.scss";
 import loginRoute from "@/routes/post";
 import { SetStateAction, useState } from "react";
 import { useRouter } from "next/navigation";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Home() {
   const [mailValue, setMailValue] = useState("");
   const [passwordValue, setPasswordValue] = useState("");
-  const router = useRouter()
+  const router = useRouter();
+
+  const notify = () =>
+    toast.error("Failed to login!", {
+      position: "top-right",
+      autoClose: 4998,
+      hideProgressBar: false,
+      closeOnClick: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+    });
 
   const handleUserChange = (e: {
     target: { value: SetStateAction<string> };
@@ -60,13 +73,16 @@ export default function Home() {
           <button
             style={{ backgroundColor: variables.primaryBtnColor }}
             onClick={async () => {
-              await loginRoute(mailValue, passwordValue) && router.push("/dashboard")
+              (await loginRoute(mailValue, passwordValue))
+                ? router.push("/dashboard")
+                : notify();
             }}
           >
             Entrar
           </button>
           <button disabled>Conecte-se</button>
         </div>
+        <ToastContainer limit={1} style={{ width: "50%", height: "10%" }} />
       </div>
     </div>
   );
