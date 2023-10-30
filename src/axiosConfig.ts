@@ -1,7 +1,9 @@
 import axios, { AxiosError } from "axios";
 
+const baseURL = "http://localhost:3333";
+
 const api = axios.create({
-  baseURL: process.env.BASE_URL,
+  baseURL: baseURL,
 });
 
 const isAxiosError = (error: unknown): error is AxiosError => {

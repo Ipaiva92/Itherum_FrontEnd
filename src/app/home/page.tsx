@@ -14,15 +14,14 @@ export default function Home() {
   const router = useRouter();
 
   const notify = () =>
-    toast("Error to login!", {
+    toast.error("Failed to login!", {
       position: "top-right",
-      autoClose: 2000,
+      autoClose: 4998,
       hideProgressBar: false,
       closeOnClick: true,
-      pauseOnHover: true,
       draggable: true,
       progress: undefined,
-      theme: "dark",
+      theme: "colored",
     });
 
   const handleUserChange = (e: {
@@ -80,10 +79,10 @@ export default function Home() {
             }}
           >
             Entrar
-            <ToastContainer />
           </button>
           <button disabled>Conecte-se</button>
         </div>
+        <ToastContainer limit={1} style={{ width: "50%", height: "10%" }} />
       </div>
     </div>
   );
