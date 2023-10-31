@@ -13,14 +13,33 @@ body {
     position: fixed;
     width: 100%;
     z-index: 1;
+    align-items: center;
+    .navBarMenuBtn {
+      margin-left: 2.5em;
+      text-decoration: none;
+      border: none;
+    }
+    .navBarMenuBtn:hover {
+      cursor: pointer;
+    }
+    .logo {
+      margin-left: 10em;
+    }
+    .logout {
+      text-decoration: none;
+      border: none;
+      margin-right: 10em;
+    }
+    .logout:hover {
+      cursor: pointer;
+    }
   }
-  .leftNavBar{
+  .leftNavBar {
     position: absolute;
     float: left;
     z-index: 0;
-    margin-top: 1em;
     height: 100%;
-    a{
+    a {
       display: block;
       margin-left: 1em;
       padding: 1em;
