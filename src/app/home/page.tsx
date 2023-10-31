@@ -37,7 +37,7 @@ export default function Home() {
   };
 
   return (
-    <div>
+    <div className="container-login">
       <div
         className="container"
         style={{ backgroundColor: variables.backgroundColorWhite }}
