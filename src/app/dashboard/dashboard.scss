@@ -24,7 +24,7 @@ header {
 
 .navbar {
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-start ;
   align-items: center;
 }
 
@@ -37,23 +37,18 @@ header {
   display: flex;
 
   li {
-    margin-right: 20px;
+    margin-right: 1em;
 
     a {
       text-decoration: none;
       color: $text-color;
       transition: color 0.3s;
-
-      &:hover {
-        color: $hover-color;
-      }
     }
   }
 }
 
 .logout{
   border: none;
-  margin-left: 120em
 }
 
 .logout:hover{
@@ -61,7 +56,6 @@ header {
 }
 
 .logo {
-  font-size: 24px;
   font-weight: bold;
 }
 
@@ -75,8 +69,8 @@ html {
 }
 
 .sidebar {
-  padding-top: 6em;
-  width: 250px;
+  padding-top: 5em;
+  width: 5em;
   color: $text-color;
   position: fixed;
   height: 100%;
@@ -88,20 +82,22 @@ html {
     text-decoration: none;
     color: $text-color;
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 1em;
   }
 
   a.active {
     font-weight: bold;
     color: white;
+    background-color: rgba(202, 198, 192, 0.50);
+    border-left: white solid 2px;
   }
 
   .fa {
-    margin-right: 10px;
+    margin-right: 1em;
   }
 
   &.collapsed {
-    width: 60px;
+    width: 0;
     a {
       span {
         display: none;
@@ -111,11 +107,6 @@ html {
 }
 
 .main-content {
-  margin-left: 250px;
-  padding: 20px;
+  margin-left: 2em;
   transition: margin-left 0.3s;
-
-  &.collapsed {
-    margin-left: 60px;
-  }
 }

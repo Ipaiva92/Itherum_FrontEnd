@@ -2,12 +2,21 @@
 import variables from "@/app/variables.module.scss";
 import "./dashboard.scss";
 import Image from "next/image";
-import { RiLogoutBoxRLine } from "react-icons/ri";
+import { RiLogoutBoxRLine, RiMoneyDollarCircleFill } from "react-icons/ri";
 import { AiOutlineMenu } from "react-icons/ai";
-import { useState } from "react";
+import { SetStateAction, useState } from "react";
+import { BsHouseFill } from "react-icons/bs";
+import { FaUser } from "react-icons/fa";
+import { useRouter } from "next/navigation";
 
 export default function Dashboard() {
   const [collapsed, setCollapsed] = useState(false);
+  const [activeItem, setActiveItem] = useState("home");
+  const router = useRouter();
+
+  const handleItemClick = (item: SetStateAction<string>) => {
+    setActiveItem(item);
+  };
 
   const toggleMenu = () => {
     setCollapsed(!collapsed);
@@ -40,7 +49,8 @@ export default function Dashboard() {
                 <button
                   className="logout"
                   onClick={() => {
-                    localStorage.removeItem("userId");
+                    localStorage.removeItem("token");
+                    router.push("/")
                   }}
                 >
                   <RiLogoutBoxRLine />
@@ -52,18 +62,31 @@ export default function Dashboard() {
         </nav>
       </header>
 
-      <div style={{backgroundColor: variables.primaryColorVariant}} className={`sidebar ${collapsed ? "collapsed" : ""}`}>
-        <a href="#home" className="active">
-          <i className="fa fa-home"></i> <span>Home</span>
+      <div
+        style={{ backgroundColor: variables.primaryColorVariant }}
+        className={`sidebar ${collapsed ? "collapsed" : ""}`}
+      >
+        <a
+          href="#home"
+          className={activeItem === "home" ? "active" : ""}
+          onClick={() => handleItemClick("home")}
+        >
+          <i className="fa fa-home"></i> <BsHouseFill size={30} />
         </a>
-        <a href="#about">
-          <i className="fa fa-info-circle"></i> <span>About</span>
+        <a
+          href="#services"
+          className={activeItem === "services" ? "active" : ""}
+          onClick={() => handleItemClick("services")}
+        >
+          <i className="fa fa-cogs"></i> <FaUser size={30} />
         </a>
-        <a href="#services">
-          <i className="fa fa-cogs"></i> <span>Services</span>
-        </a>
-        <a href="#contact">
-          <i className="fa fa-envelope"></i> <span>Contact</span>
+        <a
+          href="#contact"
+          className={activeItem === "contact" ? "active" : ""}
+          onClick={() => handleItemClick("contact")}
+        >
+          <i className="fa fa-envelope"></i>
+          <RiMoneyDollarCircleFill size={30} />
         </a>
       </div>
     </div>
