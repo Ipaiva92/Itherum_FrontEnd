@@ -1,14 +1,14 @@
 "use client";
 import variables from "@/app/variables.module.scss";
 import Image from "next/image";
-import "./home.scss";
+import "./login.scss";
 import loginRoute from "@/routes/post";
 import { SetStateAction, useState } from "react";
 import { useRouter } from "next/navigation";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-export default function Home() {
+export default function Login() {
   const [mailValue, setMailValue] = useState("");
   const [passwordValue, setPasswordValue] = useState("");
   const router = useRouter();
@@ -37,7 +37,7 @@ export default function Home() {
   };
 
   return (
-    <div>
+    <div className="container-login">
       <div
         className="container"
         style={{ backgroundColor: variables.backgroundColorWhite }}
@@ -82,7 +82,7 @@ export default function Home() {
           </button>
           <button disabled>Conecte-se</button>
         </div>
-        <ToastContainer limit={1} style={{ width: "50%", height: "10%" }} />
+        <ToastContainer limit={1} style={{ width: "10%", height: "10%" }} />
       </div>
     </div>
   );

@@ -8,12 +8,15 @@ body {
   padding: 0;
   margin: 0;
   color: $primary-color;
-  div {
+.container-login{
     height: 100%;
     align-items: center;
     display: grid;
     grid-template-columns: 1fr 1fr;
     .container {
+      height: 100%;
+      display: flex;
+      align-items: center;
       padding-left: 25%;
       .container-input {
         display: flex;
