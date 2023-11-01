@@ -45,7 +45,7 @@ export default function Dashboard() {
           </div>
           <ul className="nav-list">
             <li>
-              <a href="#contact">
+
                 <button
                   className="logout"
                   onClick={() => {
@@ -53,10 +53,9 @@ export default function Dashboard() {
                     router.push("/");
                   }}
                 >
-                  <RiLogoutBoxRLine />
+                  <RiLogoutBoxRLine size={30} />
                   Log out
                 </button>
-              </a>
             </li>
           </ul>
         </nav>
