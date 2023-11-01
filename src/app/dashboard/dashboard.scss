@@ -24,18 +24,20 @@ header {
 
 .navbar {
   display: flex;
-  justify-content: flex-start ;
-  align-items: center;
+  justify-content: flex-start;
 }
 
-.navBarMenuBtn:hover{
+.navBarMenuBtn:hover {
   cursor: pointer;
 }
 
 .nav-list {
-  list-style: none;
+  width: 100%;
+  align-items: center;
+  margin-right: 5em;
   display: flex;
-
+  justify-content: flex-end;
+  list-style: none;
   li {
     margin-right: 1em;
 
@@ -47,11 +49,11 @@ header {
   }
 }
 
-.logout{
+.logout {
   border: none;
 }
 
-.logout:hover{
+.logout:hover {
   cursor: pointer;
 }
 
@@ -88,7 +90,7 @@ html {
   a.active {
     font-weight: bold;
     color: white;
-    background-color: rgba(202, 198, 192, 0.50);
+    background-color: rgba(202, 198, 192, 0.5);
     border-left: white solid 2px;
   }
 

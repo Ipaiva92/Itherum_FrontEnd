@@ -50,7 +50,7 @@ export default function Dashboard() {
                   className="logout"
                   onClick={() => {
                     localStorage.removeItem("token");
-                    router.push("/")
+                    router.push("/");
                   }}
                 >
                   <RiLogoutBoxRLine />
